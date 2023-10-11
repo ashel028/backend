@@ -27,45 +27,38 @@
     <div class="php">
 
       <?php
-      // Ejercicio 1: Mostrar los números del 1 al 9.
-      for ($i = 1; $i <= 9; $i++) {
-          echo $i . " ";
-      }
-      echo "<br>";
+  if (isset($_POST['nombre']) && isset($_POST['nota'])) {
+      $nombre = $_POST['nombre'];
+      $nota = $_POST['nota'];
 
-      // Ejercicio 2: Mostrar los números del 9 al 1.
-      for ($i = 9; $i >= 1; $i--) {
-          echo $i . " ";
+      if (is_numeric($nota)) {
+          if ($nota >= 0 && $nota <= 10) {
+              if ($nota >= 0 && $nota <= 2) {
+                  $calificacion = "Muy deficiente";
+              } elseif ($nota >= 3 && $nota <= 5) {
+                  $calificacion = "Insuficiente";
+              } elseif ($nota >= 6 && $nota <= 7) {
+                  $calificacion = "Bien";
+              } elseif ($nota >= 8 && $nota <= 9) {
+                  $calificacion = "Notable";
+              } elseif ($nota == 10) {
+                  $calificacion = "Sobresaliente";
+              }
+              echo "Nombre del alumno: $nombre<br>";
+              echo "Calificación: $calificacion";
+          } else {
+              echo "La nota debe estar entre 0 y 10.";
+          }
+      } else {
+          echo "La nota no es un número válido.";
       }
-      echo "<br>";
+  } else {
+      echo "Faltan datos. Por favor, ingresa el nombre y la nota del alumno.";
+  }
+  ?>
 
-      // Ejercicio 3: Mostrar los números pares del 1 al 20.
-      for ($i = 2; $i <= 20; $i += 2) {
-          echo $i . " ";
-      }
-      echo "<br>";
-
-      // Ejercicio 4: Mostrar los números impares del 1 al 20.
-      for ($i = 1; $i <= 20; $i += 2) {
-          echo $i . " ";
-      }
-      echo "<br>";
-
-      // Ejercicio 5: Mostrar la suma de los números del 1 al 20.
-      $sumaTotal = 0;
-      for ($i = 1; $i <= 20; $i++) {
-          $sumaTotal += $i;
-      }
-      echo "La suma de los números del 1 al 20 es: " . $sumaTotal . "<br>";
-
-      // Ejercicio 6: Mostrar la suma de los números pares del 1 al 20.
-      $sumaPares = 0;
-      for ($i = 2; $i <= 20; $i += 2) {
-          $sumaPares += $i;
-      }
-      echo "La suma de los números pares del 1 al 20 es: " . $sumaPares . "<br>";
-      ?>
 
     </div>
 </body>
 </html>
+

@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 6 - Tarea PD - Programación Back End</title>
+    <title>Alta y Edición de Producto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Aquí debes vincular tu archivo de CSS -->
 </head>
-
 <body>
-    <h2>Tarea 1: Factorial de 8</h2>
-    <?php
-    // Tarea 1: Factorial de 8
-    $num = 8;
-    $factorial = 1;
-    for ($i = 1; $i <= $num; $i++) {
-        $factorial *= $i;
-    }
-    echo "<p>El factorial de 8 es: " . $factorial . "</p>";
+    <div class="form-container">
+        <h2>Alta de Producto</h2>
+        <form action="procesar.php" method="post">
+            <label for="product-name">Nombre del Producto:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            <label for="product-description">Descripción del Producto:</label>
+            <textarea id="product-description" name="product-description" required></textarea>
+            <label for="product-price">Precio del Producto:</label>
+            <input type="number" id="product-price" name="product-price" required>
+            <button type="submit">Guardar Producto</button>
+        </form>
+    </div>
 
-    // Tarea 2 y 3: Calificación del alumno
-    if (isset($_POST['submit'])) {
-        $alumno = $_POST['alumno'];
-        $nota = $_POST['nota'];
-        $mensaje = "";
 
-        if (empty($alumno)) {
-            $mensaje = "El nombre del alumno no ha sido ingresado.";
-        } elseif (empty($nota)) {
-            $mensaje = "La nota no ha sido ingresada.";
-        } elseif (!is_numeric($nota)) {
-            $mensaje = "La nota no es un número.";
-        } elseif ($nota < 0 || $nota > 10) {
-            $mensaje = "La nota no está en el rango válido (0-10).";
-        } else {
-            if ($nota >= 0 && $nota <= 2) {
-                $mensaje = "Muy deficiente";
-            } elseif ($nota >= 3 && $nota <= 5) {
-                $mensaje = "Insuficiente";
-            } elseif ($nota >= 6 && $nota <= 7) {
-                $mensaje = "Bien";
-            } elseif ($nota >= 8 && $nota <= 9) {
-                $mensaje = "Notable";
-            } elseif ($nota === 10) {
-                $mensaje = "Sobresaliente";
-            }
-            echo "<h2>Calificación de $alumno</h2>";
-            echo "<p>La nota ingresada es: $nota - $mensaje</p>";
-        }
-        if (!empty($mensaje)) {
-            echo "<p style='color: red;'>$mensaje</p>";
+  <div class="php-conteiner">
+  <?php 
+
+   
+    $numbers = [];
+    for ($i = 1; count($numbers) < 10; $i++) {
+        if ($i % 2 === 0) {
+            $numbers[] = $i;
         }
     }
+    foreach ($numbers as $number) {
+        echo $number . "<br>";
+    }
+
+   
+    $array = ['Pedro', 'Ana', 34, 1];
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
+
+    
+    $person = ['Nombre' => 'Pedro',
+        'Apellido' => 'Torres',
+        'Dirección' => 'Av. Mayo 3703',
+        'Teléfono' => '1122334455'
+    ]; echo "<pre>";
+    print_r($person);
+    echo "</pre>";
+
+    
+    $cities = ['Madrid', 'Barcelona', 'Londres', 'New York', 'Los Ángeles', 'Chicago'];
+    foreach ($cities as $index => $city) {
+        echo "La ciudad con el índice $index tiene el nombre $city <br>";
+    }
+
+    $citiesAssociative = [
+        'MD' => 'Madrid',
+        'BCL' => 'Barcelona',
+        'LD' => 'Londres',
+        'NY' => 'New York',
+        'LA' => 'Los Ángeles',
+        'CCG' => 'Chicago'
+    ];
+
+    foreach ($citiesAssociative as $index =>       
+  $city) {
+        echo "El índice de $city es $index <br>";
+    }
+
     ?>
+  </div>
 
-    <h2>Tarea 2: Formulario de calificación</h2>
-    <form action="" method="post">
-        <label for="alumno">Nombre del alumno:</label><br>
-        <input type="text" id="alumno" name="alumno"><br><br>
-        <label for="nota">Nota:</label><br>
-        <input type="text" id="nota" name="nota"><br><br>
-        <input type="submit" name="submit" value="Enviar">
-    </form>
+  
 </body>
-
 </html>
 

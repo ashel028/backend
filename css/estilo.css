@@ -10,6 +10,7 @@ table {
     border-collapse: collapse;
 }
 
+
 @font-face {
         font-family: "apple";
         src: url("../fuentes/ARLRDBD.ttf")
@@ -24,4 +25,41 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+body {
+    background-color: #F5F5DC;
+    color: black;
+}
 
+h2 {
+    color: black;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.table {
+    margin: auto;
+    width: 80%;
+}
+
+.table th {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table td {
+    font-size: 16px;
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #F5F5DC;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-light {
+    background-color: #F8F9FA;
+}

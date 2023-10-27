@@ -1,53 +1,47 @@
 <?php
+
 // Ejercicio a
-$primeros_pares = [];
-for ($i = 2; $i <= 20; $i += 2)
-{
-    $primeros_pares[] = $i;
-}
-echo "a) Los primeros 10 números pares son: <br>";
-foreach ($primeros_pares as $par)
-{
-    echo $par . "<br>";
+function calcularCuadrado($lado) {
+    $perimetro = 4 * $lado;
+    $superficie = $lado * $lado;
+    echo "Para un cuadrado de lado $lado, el perímetro es: $perimetro y la superficie es: $superficie <br>";
 }
 
 // Ejercicio b
-$datos = ["Pedro", "Ana", 34, 1];
-echo "<br>b) Esquema del array con print_r(): <br>";
-print_r($datos);
+$cadena = "Hola Mundo";
+
+function mostrarMayusculas($cadena) {
+    echo strtoupper($cadena) . "<br>";
+}
+
+function mostrarMinusculas($cadena) {
+    echo strtolower($cadena) . "<br>";
+}
 
 // Ejercicio c
-$informacion =
-[
-    "Nombre" => "Pedro";
-    "Apellido" => "Torres";
-    "Dirección" => "Av. Mayo 3703";
-    "Teléfono" => "1122334455";
-];
-echo "<br>c) Array asociativo de información personal: <br>";
-print_r($informacion);
+function diasEnMes($mes) {
+    $dias = ($mes == 2) ? "28 o 29" : (($mes <= 7 && $mes % 2 != 0) || ($mes > 7 && $mes % 2 == 0) ? "31" : "30");
+    echo "El mes $mes tiene $dias días <br>";
+}
 
 // Ejercicio d
-$ciudades =
-["Madrid" "Barcelona" "Londres" "New York" "Los Ángeles" "Chicago"];
-echo "<br>d) Ciudades: <br>";
-foreach ($ciudades as $index => $ciudad)
-{
-    echo "La ciudad con el índice $index tiene el nombre $ciudad <br>";
+$palabra = "Somos o no somos";
+
+function esPalindromo($palabra) {
+    $palabra = strtolower(preg_replace("/[^A-Za-z0-9]/", '', $palabra));
+    $reversa = strrev($palabra);
+    if ($palabra == $reversa) {
+        echo "La palabra \"$palabra\" es un palíndromo <br>";
+    } else {
+        echo "La palabra \"$palabra\" no es un palíndromo <br>";
+    }
 }
 
-// Ejercicio e
-$ciudades_asociativas =
- [
-    "MD" => "Madrid";
-    "BCL" => "Barcelona";
-    "LD" => "Londres";
-    "NY" => "New York";
-    "LA" => "Los Ángeles";
-    "CCG" => "Chicago";
-];
-echo "<br>e) Ciudades asociativas: <br>";
-foreach ($ciudades_asociativas as $index => $ciudad) {
-    echo "El índice de $ciudad es $index <br>";
-}
+// Ejecución de las funciones
+calcularCuadrado(5);
+mostrarMayusculas($cadena);
+mostrarMinusculas($cadena);
+diasEnMes(2);
+esPalindromo($palabra);
+
 ?>

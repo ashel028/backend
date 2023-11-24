@@ -1,0 +1,112 @@
+/* Reset de estilos y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #001f3f; /* Azul marino */
+
+}
+
+.login-container {
+    max-width: 6px;
+    margin: 0 auto;
+}
+
+/* Estilo para el formulario de creación de productos */
+.create {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.create input,
+.create button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.create button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.create button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para la tabla de productos */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Estilo para los botones de editar y eliminar */
+table button {
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+table button:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para el formulario de edición */
+.edit-form {
+    display: none;
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form label,
+.edit-form input,
+.edit-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.edit-form button {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.edit-form button:hover {
+    background-color: #45a049;
+}

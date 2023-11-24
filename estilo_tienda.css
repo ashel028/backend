@@ -1,0 +1,45 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.carousel-inner {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.carousel-caption {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    color: #333;
+}
+
+.carousel-caption p {
+    color: #555;
+}
+
+.carousel-caption button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-caption button:hover {
+    background-color: #0056b3;
+}
